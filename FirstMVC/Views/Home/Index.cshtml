@@ -1,0 +1,27 @@
+﻿@model IEnumerable<FirstMVC.Models.CarListViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<form method="get" action="@Url.Action("Index")"
+      data-first-ajax="true" data-first-target="#carsList">
+
+        <input type="Search" name="searchTerm" data-first-autocomplete="@Url.Action("AutoComplete")" />
+        <input type="Submit" value="Search By Make" />
+    </form>
+
+@*@using (Ajax.BeginForm(
+    new AjaxOptions
+    {
+        HttpMethod = "get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "carsList"
+    }))
+{
+    <input type="Search" name="searchTerm" />
+    <input type="Submit" value="Search By Make" />
+}*@
+
+@Html.Partial("_Cars", Model)

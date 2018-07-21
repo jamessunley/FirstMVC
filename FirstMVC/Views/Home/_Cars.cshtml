@@ -1,0 +1,13 @@
+﻿@model IEnumerable<FirstMVC.Models.CarListViewModel>
+
+<div id="carsList">
+    @foreach (var item in Model)
+    {
+        <div>
+            <h4>@item.Make</h4>
+            <div>@item.Model, @item.Price</div>
+            <div>Reviews: @item.CountOfReviews</div>
+            <hr />
+        </div>
+    }
+</div>
